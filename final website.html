@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department of Computer Science - GVM Girls College</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.4s ease;
+      overflow-x: hidden;
+    }
+    
+    .dark-mode {
+      --tw-bg-opacity: 1;
+      background-color: rgb(26 32 44 / var(--tw-bg-opacity));
+      color: rgb(226 232 240 / var(--tw-text-opacity));
+    }
+    
+    .scrolling-text {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      white-space: nowrap;
+      animation: scrollText 15s linear infinite;
+      font-size: 12px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 0;
+      width: 100%;
+      font-style: italic;
+    }
+    
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    .section {
+      display: none;
+      padding: 2rem 0;
+    }
+    
+    .section.active {
+      display: block;
+    }
+    
+    .nav-link.active {
+      color: #d97706;
+      font-weight: bold;
+    }
+    
+    /* Faculty Card Animation */
+    .faculty-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-30">
+  <!-- Scrolling Text -->
+  <div class="scrolling-text">
+    Website developed by Komal Saini (BCA 3rd Year, Roll No: 231521)
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" class="fixed top-6 right-6 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg z-40 transform transition hover:scale-110">
+    <i class="fas fa-moon text-yellow-500 text-xl"></i>
+  </button>
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-30 transition-colors duration-300">
+    <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0" id="logo">
+        <img src="gvmlogo.jpg" alt="GVM Girls College Logo" class="h-16 mr-3">
+        <div>
+          <h1 class="text-xl font-bold text-blue-900 dark:text-yellow-400">GVM GIRLS COLLEGE, SONIPAT</h1>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Department of Computer Science</p>
+        </div>
+      </div>
+      
+      <nav class="w-full md:w-auto">
+        <ul class="flex flex-wrap justify-center space-x-1 md:space-x-6 text-sm md:text-base">
+          <li><a href="#" class="nav-link active px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="home">Home</a></li>
+          <li><a href="#" class="nav-link px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="about">About</a></li>
+          <li><a href="#" class="nav-link px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="faculty">Faculty</a></li>
+          <li><a href="#" class="nav-link px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="programs">Programs</a></li>
+<li><a href="#" class="nav-link px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="placement">Placement</a></li>
+
+          <li><a href="#" class="nav-link px-3 py-2 text-blue-900 dark:text-yellow-400 hover:text-yellow-600 transition" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+ <section id="home" class="section active">
+  <div class="relative text-white py-32 text-center overflow-hidden">
+    
+    <!-- 🔹 Background Video -->
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover -z-10">
+      <source src="vedio1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- 🔹 Overlay (optional: thoda dark transparent layer for readability) -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 -z-10"></div>
+
+    <!-- 🔹 Foreground Content -->
+    <div class="container mx-auto px-4 relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Computer Science Department</h1>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        "Where Innovation Meets Education" - Preparing students for the digital future through quality education and cutting-edge research.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="enroll-btn bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
+          Enroll Now <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+        <button class="border-2 border-white hover:bg-white hover:text-blue-900 font-bold py-3 px-6 rounded-full transition transform hover:scale-105">
+          Virtual Tour
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-white">About Our Department</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <img src="gvmpic.png" alt="Computer Science Department Building" class="w-full rounded-lg shadow-lg">
+        </div>
+        <div>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            The Department of Computer Science at GVM Girls College, Sonipat was established in 1995 with the vision to empower women through quality technical education. Our department has grown to become one of the premier computer science departments in the region.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            We offer state-of-the-art facilities including modern computer labs, AI & robotics lab, and a well-stocked digital library. Our faculty comprises highly qualified professionals committed to academic excellence.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            With strong industry collaborations and a 100% placement record, we prepare our students for successful careers in technology.
+          </p>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            Learn More About Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Section -->
+ <section id="faculty" class="section">
+  <div class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-white">Our Esteemed Faculty</h2>
+   <p class="text-lg italic text-blue-700 dark:text-yellow-300 text-center mb-8 
+           animate-pulse transition duration-500 transform hover:scale-105 hover:text-blue-900 dark:hover:text-yellow-400">
+  "Guiding students with knowledge & wisdom"
+</p>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- HOD -->
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="rakeshsir.jpeg" 
+             alt="Mr. Rakesh Juneja" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Mr. Rakesh Juneja</h3>
+          <p class="text-gray-600 dark:text-gray-300">Head of Department</p>
+        </div>
+      </div>
+
+      <!-- Other Faculty Members -->
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="meenumam.jpeg"
+             alt="Ms. Meenu Sukhija"
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class=" text-xl font-bold text-blue-900 dark:text-yellow-400">Ms. Meenu Sukhija</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="preetimam.jpeg" 
+             alt="Ms. Priti" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Ms. Priti</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="anshumam.jpeg" 
+             alt="Ms. Anshu" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Ms. Anshu</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="parulmam.jpeg" 
+             alt="Ms. Parul" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Ms. Parul</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="monikamam.jpeg" 
+             alt="Dr. Monika Nirwal" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Dr. Monika Nirwal</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+      <div class="faculty-card bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 text-center p-6">
+        <img src="ritumam.jpeg" 
+             alt="Ms. Ritu Sehrawat" 
+             class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg">
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-blue-900 dark:text-yellow-400">Ms. Ritu Sehrawat</h3>
+          <p class="text-gray-600 dark:text-gray-300">Assistant Professor</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="section">
+    <div class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-white">Our Academic Programs</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- B.Sc CS -->
+        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+          <img src="bsc.png" alt="B.Sc Computer Science" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-blue-900 dark:text-yellow-400">B.Sc (Computer Science)</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">3-year undergraduate program covering core computer science concepts.</p>
+            <button class="enroll-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+        
+        <!-- BCA -->
+        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+          <img src="bca.jpg" alt="Bachelor of Computer Applications" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-blue-900 dark:text-yellow-400">Bachelor of CA</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Professional degree focusing on application development.</p>
+            <button class="enroll-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+        
+        <!-- M.Sc CS -->
+        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+          <img src="msc.jpeg" alt="M.Sc Computer Science" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-blue-900 dark:text-yellow-400">M.Sc (Computer Science)</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Advanced studies in specialized areas of computer science.</p>
+            <button class="enroll-btn w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Placement Section -->
+<section id="placement" class="section">
+  <div class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-white">Placements & Career Opportunities</h2>
+
+    <p class="text-gray-700 dark:text-gray-300 mb-6">
+      The Department of Computer Science is proud of its successful students who have been placed in reputed companies and institutions.
+    </p>
+
+    <!-- Students Placement Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+      <!-- Student 1 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+        <img src="poojapandey.jpeg" alt="Pooja Pandey" 
+             class="w-32 h-32 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-blue-900 dark:text-yellow-400">Pooja Pandey</h3>
+        <p class="text-gray-600 dark:text-gray-300">B.Sc (Non-Medical)</p>
+        <p class="text-green-600 dark:text-green-400 font-semibold">Axis Bank</p>
+      </div>
+
+      <!-- Student 2 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+        <img src="shivam.jpeg" alt="Shivam" 
+             class="w-32 h-32 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-blue-900 dark:text-yellow-400">Shivam</h3>
+        <p class="text-gray-600 dark:text-gray-300">B.Sc (Non-Medical)</p>
+        <p class="text-green-600 dark:text-green-400 font-semibold">Axis Bank</p>
+      </div>
+
+      <!-- Student 3 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+        <img src="nanshi.jpeg" alt="Nanshi" 
+             class="w-32 h-32 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-blue-900 dark:text-yellow-400">Nanshi</h3>
+        <p class="text-gray-600 dark:text-gray-300">BCA</p>
+        <p class="text-blue-600 dark:text-blue-300 font-semibold">Axis Bank</p>
+      </div>
+
+      <!-- Student 4 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+        <img src="rajni.jpeg" alt="Rajni" 
+             class="w-32 h-32 mx-auto object-cover rounded-full border-4 border-blue-900 dark:border-yellow-400 shadow-lg mb-4">
+        <h3 class="text-lg font-bold text-blue-900 dark:text-yellow-400">Rajni</h3>
+        <p class="text-gray-600 dark:text-gray-300">BCA</p>
+        <p class="text-blue-600 dark:text-blue-300 font-semibold">Axis Bank</p>
+      </div>
+    </div>
+
+    <!-- PDF Download Link -->
+    <div class="text-center mt-8">
+      <a href="placementpdf.pdf" target="_blank" 
+         class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transition">
+        📄 Download Full Placement Report (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-white">Contact Us</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-blue-900 dark:text-white">Department of Computer Science</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3"></i>
+              <p class="text-gray-700 dark:text-gray-300">GVM Girls College, Sonipat, Haryana 131001</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-phone text-yellow-500 mr-3"></i>
+              <p class="text-gray-700 dark:text-gray-300">+91-1234567890</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-yellow-500 mr-3"></i>
+              <p class="text-gray-700 dark:text-gray-300">csdept@gvmgc.in</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-globe text-yellow-500 mr-3"></i>
+              <a href="https://gvmgc.in" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">gvmgc.in</a>
+            </div>
+          </div>
+   
+          
+          <h3 class="text-xl font-bold mt-8 mb-4 text-blue-900 dark:text-white">Connect With Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-yellow-500 text-2xl"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-blue-400 dark:text-blue-300 hover:text-yellow-500 text-2xl"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-pink-500 dark:text-pink-400 hover:text-yellow-500 text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-yellow-500 text-2xl"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-blue-900 dark:text-white">Send Us a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+              <input type="text" class="w-full border rounded-lg p-3 dark:bg-gray-700">
+            </div>
+            <div>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+              <input type="email" class="w-full border rounded-lg p-3 dark:bg-gray-700">
+            </div>
+            <div>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+              <textarea rows="4" class="w-full border rounded-lg p-3 dark:bg-gray-700"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8777.340805649346!2d77.02229504627104!3d29.002016289808285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390db06e8bc05b03%3A0x6f98701d566f738b!2sGVM%20Girl&#39;s%20College!5e0!3m2!1sen!2sin!4v1755788981855!5m2!1sen!2sin" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+     
+  </div>
+</div>
+<div class="mt-12 text-center">
+  <p class="text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent opacity-0 animate-fade-in-glow">
+    🌸 Thank You for Visiting Our Website 🌸
+  </p>
+</div>
+  </section>
+<style>
+ @keyframes fadeInGlow {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+      text-shadow: none;
+    }
+    50% {
+      opacity: 0.7;
+      text-shadow: 0 0 10px rgba(255, 0, 150, 0.6), 0 0 20px rgba(128, 0, 255, 0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      text-shadow: 0 0 15px rgba(255, 0, 150, 0.8), 0 0 30px rgba(128, 0, 255, 0.7);
+    }
+  }
+
+  .animate-fade-in-glow {
+    animation: fadeInGlow 2.5s ease-in-out forwards;
+  }
+</style>
+
+  <script>
+    // DOM Elements
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    const enrollButtons = document.querySelectorAll('.enroll-btn');
+
+    // Dark Mode Toggle
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun text-yellow-300 text-xl"></i>';
+      } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon text-yellow-500 text-xl"></i>';
+      }
+    });
+
+    // Navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        link.classList.add('active');
+        
+        // Hide all sections
+        sections.forEach(section => section.classList.remove('active'));
+        
+        // Show clicked section
+        const sectionId = link.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+      });
+    });
+
+    // Enroll Button Functionality
+    enrollButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Thank you for your interest! Enrollment process will begin shortly.');
+      });
+    });
+  </script>
+</body>
+</html>
